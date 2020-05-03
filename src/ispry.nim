@@ -112,5 +112,12 @@ proc repl*() =
     else:
       lines.add(line)
 
-repl()
+var thr: array[0..1, Thread[void]]
+
+proc threadFunc() {.thread.} =
+  repl()
+
+createThread(thr[0], threadFunc)
+
+joinThreads(thr)
 

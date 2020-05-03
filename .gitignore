@@ -5,3 +5,4 @@ bin/spry
 bin/ispry
 .vagrant
 *.log
+_nimble
